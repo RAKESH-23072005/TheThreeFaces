@@ -82,17 +82,6 @@ export default function Footer() {
             <p className="text-xs sm:text-sm text-[#A6A8AC] leading-relaxed max-w-sm mb-5">
               A modern software design and web engineering studio helping ambitious founders, brands, and enterprises craft extraordinary digital experiences.
             </p>
-
-            {/* Availability status badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08]">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B9F36B] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#B9F36B]" />
-              </span>
-              <span className="text-[11px] font-mono text-[#A6A8AC]">
-                Available for New Projects
-              </span>
-            </div>
           </motion.div>
 
           {/* ── Navigation: 2-Column Side-by-Side on Mobile (5 cols on lg) ── */}
