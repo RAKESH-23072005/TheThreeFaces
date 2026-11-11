@@ -33,87 +33,109 @@ export default function Portfolio() {
         <div
           className={
             isVertical
-              ? 'flex flex-col gap-8 max-w-4xl mx-auto'
+              ? 'flex flex-col gap-8 max-w-5xl mx-auto'
               : 'grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8'
           }
         >
-          {projects.map((project) => (
-            <motion.article
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={springCard}
-              className={
-                isVertical
-                  ? 'group relative rounded-3xl border border-white/[0.12] border-t-white/[0.22] bg-[#141619]/90 backdrop-blur-xl p-4 sm:p-6 shadow-xl flex flex-col md:flex-row md:items-center gap-6 hover:border-[#B9F36B]/35 transition-colors duration-200'
-                  : 'group relative rounded-3xl border border-white/[0.12] border-t-white/[0.22] bg-[#141619]/90 backdrop-blur-xl p-3 sm:p-4 shadow-xl flex flex-col justify-between hover:border-[#B9F36B]/35 transition-colors duration-200'
-              }
-            >
-              {/* Media Container with 100% Crisp Visual, NO OVERLAY */}
-              <div
+          {projects.map((project) => {
+            const isExternal = Boolean(project.link && project.link.startsWith('http'));
+
+            return (
+              <motion.article
+                key={project.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={springCard}
                 className={
                   isVertical
-                    ? 'relative aspect-[16/10] w-full md:w-1/2 rounded-2xl overflow-hidden bg-[#101113] shrink-0'
-                    : 'relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-[#101113] mb-4'
+                    ? 'group relative rounded-3xl border border-white/[0.12] border-t-white/[0.22] bg-[#141619]/90 backdrop-blur-xl p-4 sm:p-6 md:p-8 shadow-xl flex flex-col md:flex-row md:items-center gap-6 sm:gap-8 hover:border-[#B9F36B]/35 transition-colors duration-200'
+                    : 'group relative rounded-3xl border border-white/[0.12] border-t-white/[0.22] bg-[#141619]/90 backdrop-blur-xl p-3 sm:p-4 shadow-xl flex flex-col justify-between hover:border-[#B9F36B]/35 transition-colors duration-200'
                 }
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                  loading="lazy"
-                />
+                {/* Media Container with 100% Crisp Visual, NO OVERLAY */}
+                <div
+                  className={
+                    isVertical
+                      ? 'relative aspect-[16/10] w-full md:w-[46%] rounded-2xl overflow-hidden bg-[#101113] shrink-0'
+                      : 'relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-[#101113] mb-4'
+                  }
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    loading="lazy"
+                  />
 
-                {/* Category Pill */}
-                <div className="absolute top-3 left-3 z-10">
-                  <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-[#0A0B0D]/85 border border-white/15 text-white backdrop-blur-md font-semibold">
-                    {project.category}
-                  </span>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div
-                className={
-                  isVertical
-                    ? 'flex flex-col flex-1 justify-between gap-4 py-2'
-                    : 'px-1 flex flex-col flex-1 justify-between'
-                }
-              >
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-[#B9F36B] transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-[#A6A8AC] leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Tags & Action Link */}
-                <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between">
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/[0.05] text-[#A6A8AC]"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  {/* Category Pill */}
+                  <div className="absolute top-3 left-3 z-10">
+                    <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-[#0A0B0D]/85 border border-white/15 text-white backdrop-blur-md font-semibold">
+                      {project.category}
+                    </span>
                   </div>
 
-                  <a
-                    href="#contact"
-                    className="w-8 h-8 rounded-full bg-white/[0.06] flex items-center justify-center group-hover:bg-[#B9F36B] group-hover:text-[#0A0B0D] transition-colors shrink-0 ml-2 active:scale-95"
-                    aria-label={`View ${project.title}`}
-                  >
-                    <ArrowUpRight className="w-4 h-4" />
-                  </a>
+                  {/* Status Badge */}
+                  {project.statusBadge && (
+                    <div className="absolute top-3 right-3 z-10">
+                      <span
+                        className={`text-[10px] font-mono uppercase px-2.5 py-1 rounded-full border backdrop-blur-md font-bold tracking-wide ${
+                          project.statusBadge === 'Live Site'
+                            ? 'bg-[#B9F36B]/20 text-[#B9F36B] border-[#B9F36B]/40 shadow-sm shadow-[#B9F36B]/20'
+                            : 'bg-[#141619]/80 text-[#A6A8AC] border-white/15'
+                        }`}
+                      >
+                        {project.statusBadge}
+                      </span>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </motion.article>
-          ))}
+
+                {/* Content */}
+                <div
+                  className={
+                    isVertical
+                      ? 'flex flex-col flex-1 justify-between gap-4 py-1'
+                      : 'px-1 flex flex-col flex-1 justify-between'
+                  }
+                >
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-[#B9F36B] transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-[#A6A8AC] leading-relaxed mb-4">
+                      {project.description}
+                    </p>
+                  </div>
+
+                  {/* Tags & Action Link */}
+                  <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between gap-3">
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/[0.05] text-[#A6A8AC]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <a
+                      href={project.link || '#contact'}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.06] text-white hover:bg-[#B9F36B] hover:text-[#0A0B0D] transition-all text-xs font-mono font-semibold shrink-0 group/btn active:scale-95 shadow-sm"
+                      aria-label={`View ${project.title}`}
+                    >
+                      <span>{isExternal ? 'Visit Website' : 'Explore Project'}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                    </a>
+                  </div>
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

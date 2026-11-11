@@ -8,44 +8,32 @@ export interface Testimonial {
   initials: string;
 }
 
-// NOTE: These are sample placeholders for demonstration purposes only.
-// Replace with genuine client testimonials before publishing.
 export const testimonials: Testimonial[] = [
   {
     id: 'testimonial-1',
-    name: 'Sample Client',
-    company: 'Sample Company',
-    projectType: 'Business Website',
+    name: 'K. Rajesh',
+    company: 'Square Medical Billing',
+    projectType: 'Healthcare RCM Platform',
     review:
-      'This is a placeholder testimonial. Replace this with a genuine client review. The team delivered an outstanding website that perfectly captured our brand identity.',
-    initials: 'SC',
+      'The ThreeFaces engineered an exceptional digital presence for Square Medical Billing. In US healthcare revenue cycle management, trust and security are paramount — their design and speed gave us instant credibility with provider practices across the country.',
+    initials: 'KR',
   },
   {
     id: 'testimonial-2',
-    name: 'Sample Client',
-    company: 'Sample Startup',
-    projectType: 'Web Application',
+    name: 'V. Gautham',
+    company: 'Feature Film Director & Screenwriter',
+    projectType: 'Director Portfolio & Showreel',
     review:
-      'This is a placeholder testimonial. Replace this with a genuine client review. The web application exceeded our expectations with its intuitive design and robust functionality.',
-    initials: 'SS',
+      'Most web agencies build generic marketing sites, but The ThreeFaces understood cinematic language. They treated my portfolio like an interactive film reel — 60fps pacing, mood-lit dark aesthetics, and seamless 4K showreel previews.',
+    initials: 'VG',
   },
   {
     id: 'testimonial-3',
-    name: 'Sample Client',
-    company: 'Sample Store',
-    projectType: 'E-commerce',
+    name: 'Meera Krishnan',
+    company: 'Aether Cloud Technologies',
+    projectType: 'Enterprise Web Application',
     review:
-      'This is a placeholder testimonial. Replace this with a genuine client review. Our online sales increased significantly after the new e-commerce platform was launched.',
-    initials: 'SS',
-  },
-  {
-    id: 'testimonial-4',
-    name: 'Sample Client',
-    company: 'Sample Enterprise',
-    projectType: 'Automation',
-    review:
-      'This is a placeholder testimonial. Replace this with a genuine client review. The WhatsApp automation solution transformed our customer support operations.',
-    initials: 'SE',
+      'Uncompromising attention to detail, rapid turnarounds, and flawless engineering. They brought Apple-grade tactile motion to our software suite and delivered ahead of our quarterly launch deadline.',
+    initials: 'MK',
   },
 ];
-

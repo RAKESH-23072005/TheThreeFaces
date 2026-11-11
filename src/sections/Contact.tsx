@@ -255,7 +255,7 @@ const Contact = () => {
                       id="fullName"
                       name="fullName"
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="e.g. Vikram Malhotra"
                       value={formData.fullName}
                       onChange={handleChange}
                       className={inputClasses}
@@ -271,7 +271,7 @@ const Contact = () => {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="e.g. vikram@studio.com"
                       value={formData.email}
                       onChange={handleChange}
                       className={inputClasses}
@@ -290,7 +290,7 @@ const Contact = () => {
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="+91 00000 00000"
+                      placeholder="+91 98765 43210"
                       value={formData.phone}
                       onChange={handleChange}
                       className={inputClasses}
@@ -305,7 +305,7 @@ const Contact = () => {
                       id="company"
                       name="company"
                       type="text"
-                      placeholder="Your Company"
+                      placeholder="e.g. Square Medical / Indie Filmworks"
                       value={formData.company}
                       onChange={handleChange}
                       className={inputClasses}
@@ -406,7 +406,7 @@ const Contact = () => {
                     id="description"
                     name="description"
                     rows={5}
-                    placeholder="Tell us about your project, goals, and any specific requirements..."
+                    placeholder="Tell us about your project vision, target timeline, key deliverables, and requirements..."
                     value={formData.description}
                     onChange={handleChange}
                     className={`${inputClasses} resize-none`}
