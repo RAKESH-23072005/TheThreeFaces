@@ -29,11 +29,11 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 'testimonial-3',
-    name: 'Meera Krishnan',
-    company: 'Aether Cloud Technologies',
-    projectType: 'Enterprise Web Application',
+    name: 'Rakesh Sharma R',
+    company: 'Full-Stack Developer',
+    projectType: 'Developer Portfolio & Web Engineering',
     review:
-      'Uncompromising attention to detail, rapid turnarounds, and flawless engineering. They brought Apple-grade tactile motion to our software suite and delivered ahead of our quarterly launch deadline.',
-    initials: 'MK',
+      'The ThreeFaces delivered a clean, ultra-responsive portfolio that perfectly presents my full-stack MERN projects and engineering expertise. The 60fps micro-interactions, mobile layout, and loading performance are top-tier.',
+    initials: 'RS',
   },
 ];

@@ -38,4 +38,17 @@ export const projects: Project[] = [
     link: '#contact',
     statusBadge: 'Private Preview',
   },
+  {
+    id: 'project-3',
+    title: 'Rakesh Sharma — Developer Portfolio',
+    category: 'Web Engineering & MERN Stack',
+    categorySlug: 'applications',
+    description:
+      'A modern developer portfolio engineered with React, showcasing full-stack MERN applications, interactive UI components, technical case studies, and responsive design systems.',
+    tags: ['React', 'MERN Stack', 'Frontend Engineering'],
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
+    color: '#F3B96B',
+    link: 'https://rakeshsharma-portfolio.vercel.app/',
+    statusBadge: 'Live Site',
+  },
 ];
