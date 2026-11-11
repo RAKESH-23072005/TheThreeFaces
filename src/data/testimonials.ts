@@ -6,6 +6,7 @@ export interface Testimonial {
   review: string;
   avatar?: string;
   initials: string;
+  rating?: number;
 }
 
 export const testimonials: Testimonial[] = [
@@ -17,6 +18,7 @@ export const testimonials: Testimonial[] = [
     review:
       'The ThreeFaces engineered an exceptional digital presence for Square Medical Billing. In US healthcare revenue cycle management, trust and security are paramount — their design and speed gave us instant credibility with provider practices across the country.',
     initials: 'KR',
+    rating: 5,
   },
   {
     id: 'testimonial-2',
@@ -26,6 +28,7 @@ export const testimonials: Testimonial[] = [
     review:
       'Most web agencies build generic marketing sites, but The ThreeFaces understood cinematic language. They treated my portfolio like an interactive film reel — 60fps pacing, mood-lit dark aesthetics, and seamless 4K showreel previews.',
     initials: 'VG',
+    rating: 5,
   },
   {
     id: 'testimonial-3',
@@ -35,5 +38,6 @@ export const testimonials: Testimonial[] = [
     review:
       'The ThreeFaces delivered a clean, ultra-responsive portfolio that perfectly presents my full-stack MERN projects and engineering expertise. The 60fps micro-interactions, mobile layout, and loading performance are top-tier.',
     initials: 'RS',
+    rating: 5,
   },
 ];
