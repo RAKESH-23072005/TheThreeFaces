@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #101113;
+  --color-secondary: #191B1E;
+  --color-accent: #B9F36B;
+  --color-light: #F5F5F2;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #A6A8AC;
+  --color-card: #1E2024;
+  --color-border: #2A2D32;
+  --font-sans: 'Inter', 'Manrope', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Prevent iOS Safari from auto-zooming inputs on mobile */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Apple-style direct response: Highlight on press, prevent callout & select on controls */
+  button,
+  [role="button"],
+  a {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Content typography stays selectable */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  li {
+    -webkit-user-select: auto;
+    user-select: auto;
+  }
+
+  ::selection {
+    background-color: #B9F36B;
+    color: #101113;
+  }
+
+  /* Custom Apple-style scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #101113;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #24272D;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #343840;
+  }
+}
+
+@layer utilities {
+  /* Apple Optical Sizing & Tracking */
+  .display-title {
+    letter-spacing: -0.028em;
+    line-height: 1.06;
+  }
+
+  .section-title {
+    letter-spacing: -0.022em;
+    line-height: 1.14;
+  }
+
+  .card-title {
+    letter-spacing: -0.015em;
+    line-height: 1.22;
+  }
+
+  .caption-label {
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  /* Translucent Materials & Depth (Apple WWDC Guidelines) */
+  .apple-glass {
+    background: rgba(21, 23, 26, 0.78);
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+  }
+
+  .apple-glass-light {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.08);
+  }
+
+  .apple-pill {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Tactile Pressable Feedback */
+  .apple-pressable {
+    transition: transform 120ms cubic-bezier(0.2, 0, 0, 1), opacity 120ms ease;
+  }
+  .apple-pressable:active {
+    transform: scale(0.97);
+  }
+
+  .surface-hairline {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .accent-serif {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+  }
+}
+
+/* ── The ThreeFaces Signature Card Meshes ── */
+.card-mesh-lime {
+  background:
+    radial-gradient(85% 105% at 0% 110%, rgba(185, 243, 107, 0.22), transparent 64%),
+    radial-gradient(72% 92% at 100% 0%, rgba(185, 243, 107, 0.16), transparent 62%),
+    radial-gradient(40% 52% at 54% 46%, rgba(185, 243, 107, 0.08), transparent 72%),
+    #141619;
+}
+
+.card-mesh-emerald {
+  background:
+    radial-gradient(72% 95% at 96% 4%, rgba(66, 230, 149, 0.22), transparent 62%),
+    radial-gradient(62% 72% at 0% 104%, rgba(185, 243, 107, 0.18), transparent 66%),
+    radial-gradient(36% 46% at 48% 46%, rgba(0, 0, 0, 0.5), transparent 72%),
+    #131816;
+}
+
+.card-mesh-cyan {
+  background:
+    radial-gradient(70% 95% at 4% 2%, rgba(107, 185, 243, 0.2), transparent 60%),
+    radial-gradient(64% 78% at 100% 104%, rgba(185, 243, 107, 0.16), transparent 66%),
+    radial-gradient(36% 46% at 52% 50%, rgba(0, 0, 0, 0.5), transparent 72%),
+    #12161A;
+}
+
+.card-mesh-violet {
+  background:
+    radial-gradient(95% 72% at 28% 112%, rgba(129, 140, 248, 0.22), transparent 62%),
+    radial-gradient(62% 62% at 100% 100%, rgba(185, 243, 107, 0.15), transparent 66%),
+    radial-gradient(52% 52% at 92% 0%, rgba(0, 0, 0, 0.5), transparent 70%),
+    #15141A;
+}
+
+/* ── Client Logo Track Keyframes ── */
+@keyframes client-marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.animate-client-marquee {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: client-marquee 32s linear infinite;
+}
+
+.animate-client-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Portfolio Showcase GPU Marquee */
+@keyframes marquee-ltr {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marquee-rtl {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.marquee-row-ltr {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-ltr 45s linear infinite;
+}
+
+.marquee-row-rtl {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-rtl 45s linear infinite;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .marquee-row-ltr:hover,
+  .marquee-row-rtl:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* Reduced Motion & Transparency Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .apple-glass, .apple-pill {
+    background: #15171A !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .apple-glass-light {
+    background: #F5F5F2 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
