@@ -8,18 +8,18 @@ const serviceLinks = [
   'Website Development',
   'Web Applications',
   'Mobile Applications',
-  'E-commerce',
-  'Automation',
+  'E-commerce Solutions',
+  'Workflow Automation',
 ];
 
 const companyLinks = [
   { label: 'How We Work', href: '#process' },
   { label: 'Selected Work', href: '#portfolio' },
   { label: 'Services', href: '#services' },
-  { label: 'About Us', href: '#about' },
+  { label: 'Why Choose Us', href: '#why-us' },
   { label: 'Client Reviews', href: '#reviews' },
   { label: 'Common Questions', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Start a Project', href: '#contact' },
 ];
 
 const socialLinks = [
@@ -29,7 +29,7 @@ const socialLinks = [
   { label: 'WhatsApp', href: contactConfig.social.whatsapp, icon: WhatsAppIcon },
 ];
 
-function Footer() {
+export default function Footer() {
   const scrollTo = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
       e.preventDefault();
@@ -47,172 +47,156 @@ function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
-  const headingStyle = 'mb-5 text-xs font-semibold uppercase tracking-[0.2em]';
-
   return (
-    <footer
-      className="relative"
-      style={{
-        backgroundColor: '#101113',
-        borderTop: '1px solid rgba(42, 45, 50, 0.6)',
-      }}
-    >
-      {/* Main grid */}
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 pb-12 pt-16 sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
-        {/* ── Brand ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-          className="sm:col-span-2 lg:col-span-1"
-        >
-          <div className="flex items-center gap-3 mb-4">
-            <img
-              src="/logo-emblem.png"
-              alt="The ThreeFaces Emblem"
-              className="h-12 w-auto object-contain rounded-md"
-            />
-            <div>
-              <span className="text-lg font-extrabold tracking-[0.22em] text-white block">
-                THE THREEFACES
+    <footer className="relative bg-[#0A0B0D] border-t border-white/[0.08] text-white overflow-hidden">
+      {/* Subtle ambient glow */}
+      <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[#B9F36B]/[0.02] blur-[140px]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-10 pt-14 pb-10 sm:pt-16 sm:pb-12">
+        {/* Main Grid: Responsive layout optimized for mobile */}
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-12 mb-12 sm:mb-16">
+          {/* ── Brand Column (4 cols on lg) ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col items-start lg:col-span-4"
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src="/logo-emblem.png"
+                alt="The ThreeFaces Emblem"
+                className="h-10 sm:h-11 w-auto object-contain rounded-lg"
+              />
+              <div>
+                <span className="text-base sm:text-lg font-extrabold tracking-[0.16em] sm:tracking-[0.2em] text-white block">
+                  THE THREEFACES
+                </span>
+                <span className="text-[11px] font-mono text-[#B9F36B] tracking-wider block font-semibold">
+                  Three Perspectives. One Digital Vision.
+                </span>
+              </div>
+            </div>
+
+            <p className="text-xs sm:text-sm text-[#A6A8AC] leading-relaxed max-w-sm mb-5">
+              A modern software design and web engineering studio helping ambitious founders, brands, and enterprises craft extraordinary digital experiences.
+            </p>
+
+            {/* Availability status badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08]">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B9F36B] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#B9F36B]" />
               </span>
-              <span className="text-xs text-[#B9F36B] tracking-wider block font-medium">
-                Three Perspectives. One Digital Vision.
+              <span className="text-[11px] font-mono text-[#A6A8AC]">
+                Available for New Projects
               </span>
             </div>
+          </motion.div>
+
+          {/* ── Navigation: 2-Column Side-by-Side on Mobile (5 cols on lg) ── */}
+          <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:col-span-5">
+            {/* Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <h4 className="mb-4 text-xs font-mono font-bold uppercase tracking-[0.18em] text-[#B9F36B]">
+                Services
+              </h4>
+              <ul className="space-y-2.5">
+                {serviceLinks.map((s) => (
+                  <li key={s}>
+                    <span className="text-xs sm:text-sm text-[#A6A8AC] hover:text-white transition-colors duration-200 block py-0.5">
+                      {s}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Company Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <h4 className="mb-4 text-xs font-mono font-bold uppercase tracking-[0.18em] text-[#B9F36B]">
+                Navigation
+              </h4>
+              <ul className="space-y-2.5">
+                {companyLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      onClick={(e) => scrollTo(e, link.href)}
+                      className="text-xs sm:text-sm text-[#A6A8AC] hover:text-[#B9F36B] transition-colors duration-200 block py-0.5"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
-          <p
-            className="mt-3 max-w-xs text-sm leading-relaxed"
-            style={{ color: '#A6A8AC' }}
+
+          {/* ── Connect Section (3 cols on lg) ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-3 flex flex-col"
           >
-            A digital solutions agency helping startups, entrepreneurs, and established businesses build their digital presence through modern websites, web applications, and automation.
-          </p>
-        </motion.div>
+            <h4 className="mb-4 text-xs font-mono font-bold uppercase tracking-[0.18em] text-[#B9F36B]">
+              Connect
+            </h4>
 
-        {/* ── Services ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <h4 className={headingStyle} style={{ color: '#B9F36B' }}>
-            Services
-          </h4>
-          <ul className="space-y-3">
-            {serviceLinks.map((s) => (
-              <li key={s}>
-                <span
-                  className="text-sm transition-colors duration-300 hover:text-white"
-                  style={{ color: '#A6A8AC' }}
-                >
-                  {s}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        {/* ── Company ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <h4 className={headingStyle} style={{ color: '#B9F36B' }}>
-            Company
-          </h4>
-          <ul className="space-y-3">
-            {companyLinks.map((link) => (
-              <li key={link.href}>
+            {/* Mobile: Horizontal wrapped touch chips; Desktop: Vertical interactive list */}
+            <div className="flex flex-wrap sm:flex-col gap-2 sm:gap-2.5">
+              {socialLinks.map(({ label, href, icon: Icon }) => (
                 <a
-                  href={link.href}
-                  onClick={(e) => scrollTo(e, link.href)}
-                  className="text-sm transition-colors duration-300"
-                  style={{ color: '#A6A8AC' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#A6A8AC')}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        {/* ── Connect ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <h4 className={headingStyle} style={{ color: '#B9F36B' }}>
-            Connect
-          </h4>
-          <ul className="space-y-3">
-            {socialLinks.map(({ label, href, icon: Icon }) => (
-              <li key={label}>
-                <a
+                  key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm transition-colors duration-200 py-1.5 min-h-[38px]"
-                  style={{ color: '#A6A8AC' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#A6A8AC')}
+                  className="inline-flex items-center gap-2.5 px-3 py-2 rounded-xl bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-[#A6A8AC] hover:text-white hover:border-[#B9F36B]/40 hover:bg-[#141619] transition-all duration-200 active:scale-95 group min-h-[38px]"
                 >
-                  <Icon className="h-4 w-4" />
-                  {label}
+                  <Icon className="h-4 w-4 text-[#A6A8AC] group-hover:text-[#B9F36B] transition-colors shrink-0" />
+                  <span className="font-semibold">{label}</span>
                 </a>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
 
-      {/* ── Bottom bar ── */}
-      <div
-        className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 sm:flex-row lg:px-10"
-        style={{
-          borderTop: '1px solid rgba(42, 45, 50, 0.5)',
-          paddingBottom: 'max(1.5rem, env(safe-area-inset-bottom, 1.5rem))',
-        }}
-      >
-        <p className="text-xs" style={{ color: '#A6A8AC' }}>
-          © 2026 The ThreeFaces. All rights reserved.
-        </p>
+        {/* ── Bottom Bar: Clean mobile row / stack ── */}
+        <div className="pt-6 sm:pt-8 border-t border-white/[0.08] flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs font-mono text-[#A6A8AC] text-center sm:text-left">
+            © {new Date().getFullYear()} The ThreeFaces. All rights reserved.
+          </p>
 
-        <motion.button
-          onClick={scrollToTop}
-          whileHover={{ y: -3, scale: 1.08 }}
-          whileTap={{ scale: 0.92 }}
-          transition={{ type: 'spring', stiffness: 400, damping: 25 }}
-          className="flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-300 cursor-pointer"
-          style={{
-            backgroundColor: '#1E2024',
-            border: '1px solid #2A2D32',
-            color: '#A6A8AC',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#B9F36B';
-            e.currentTarget.style.color = '#101113';
-            e.currentTarget.style.borderColor = '#B9F36B';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = '#1E2024';
-            e.currentTarget.style.color = '#A6A8AC';
-            e.currentTarget.style.borderColor = '#2A2D32';
-          }}
-          aria-label="Back to top"
-        >
-          <ArrowUp className="h-4 w-4" />
-        </motion.button>
+          <div className="flex items-center gap-3">
+            <span className="text-[11px] font-mono text-[#A6A8AC] hidden sm:inline">
+              Back to top
+            </span>
+            <motion.button
+              onClick={scrollToTop}
+              whileHover={{ y: -2, scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#141619] border border-white/[0.12] text-[#A6A8AC] hover:text-[#0A0B0D] hover:bg-[#B9F36B] hover:border-[#B9F36B] transition-colors duration-200 cursor-pointer shadow-md"
+              aria-label="Scroll back to top"
+            >
+              <ArrowUp className="h-4 w-4" />
+            </motion.button>
+          </div>
+        </div>
       </div>
     </footer>
   );
 }
-
-export default Footer;

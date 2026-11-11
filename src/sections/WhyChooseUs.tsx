@@ -138,69 +138,6 @@ export default function WhyChooseUs() {
           </motion.p>
         </div>
 
-        {/* Agency Statistics Banner (Unified Apple Telemetry Capsule) */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="rounded-3xl border border-white/[0.1] border-t-white/[0.22] bg-[#141619]/85 backdrop-blur-2xl p-6 sm:p-8 lg:p-10 mb-24 md:mb-32 shadow-2xl relative overflow-hidden"
-        >
-          {/* Subtle Ambient Backlight */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#B9F36B]/[0.03] via-transparent to-[#818CF8]/[0.03]" />
-
-          <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.08]">
-            {[
-              {
-                value: "50+",
-                label: "Projects Shipped",
-                caption: "Full-stack apps & digital brands",
-                accent: "#B9F36B",
-              },
-              {
-                value: "99.98%",
-                label: "System SLA",
-                caption: "Edge infrastructure durability",
-                accent: "#42E695",
-              },
-              {
-                value: "4.9/5",
-                label: "Client Rating",
-                caption: "Consistent 5-star satisfaction",
-                accent: "#FFB800",
-              },
-              {
-                value: "<15m",
-                label: "Response Velocity",
-                caption: "Dedicated Slack & WhatsApp",
-                accent: "#6BB9F3",
-              },
-            ].map((stat, idx) => (
-              <div
-                key={stat.label}
-                className={`flex flex-col justify-between ${
-                  idx !== 0 ? "pt-5 sm:pt-0 sm:pl-6 lg:pl-8" : ""
-                }`}
-              >
-                <div>
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.035em] tabular-nums font-sans text-white mb-2">
-                    {stat.value.replace(/[+%m/5]/g, "")}
-                    <span style={{ color: stat.accent }}>
-                      {stat.value.match(/[+%m/5]+/)?.[0]}
-                    </span>
-                  </div>
-                  <h4 className="text-xs sm:text-sm font-bold text-white tracking-tight mb-1">
-                    {stat.label}
-                  </h4>
-                </div>
-                <p className="text-[11px] text-[#A6A8AC] font-mono leading-relaxed">
-                  {stat.caption}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Feature Blocks */}
         <div className="space-y-24 md:space-y-32">
           {features.map((feature, index) => {
