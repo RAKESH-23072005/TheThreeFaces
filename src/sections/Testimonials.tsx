@@ -181,12 +181,12 @@ export default function Testimonials() {
           {/* ── Left Column: Header & Review Actions (5 cols) ── */}
           <div className="lg:col-span-5 flex flex-col items-center text-center lg:items-start lg:text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/[0.1] bg-[#141619] mb-4">
-              <span className="text-[#B9F36B] text-[11px] font-mono uppercase tracking-[0.14em] font-bold">
+              <span className="text-[#B9F36B] text-[11px] font-mono font-semibold">
                 Reviews & Ratings
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.04em] text-white mb-6 leading-[1.08]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.04em] text-white mb-6 leading-[1.08]">
               What our <br />
               <em className="accent-serif text-[#B9F36B] font-normal not-italic">
                 happy clients
@@ -196,10 +196,7 @@ export default function Testimonials() {
             </h2>
 
             {/* Apple Verified Rating Glass Module */}
-            <motion.div
-              whileHover={{ y: -3, scale: 1.01 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ type: "spring", stiffness: 400, damping: 28 }}
+            <div
               className="w-full sm:w-auto p-5 rounded-2xl sm:rounded-3xl border border-white/[0.12] border-t-white/[0.25] bg-[#141619]/90 backdrop-blur-2xl mb-8 shadow-xl relative overflow-hidden group text-left"
             >
               <div className="flex items-center justify-between gap-4 mb-3">
@@ -207,7 +204,7 @@ export default function Testimonials() {
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-4 h-4 fill-[#FFB800] text-[#FFB800] drop-shadow-[0_2px_8px_rgba(255,184,0,0.35)]"
+                      className="w-4 h-4 fill-[#FFB800] text-[#FFB800]"
                     />
                   ))}
                 </div>
@@ -224,15 +221,15 @@ export default function Testimonials() {
               </div>
 
               <p className="text-xs text-[#A6A8AC] leading-relaxed max-w-xs">
-                Across 50+ enterprise and startup launches with 100% on-time milestone delivery.
+                Across every project we&apos;ve delivered, on time and with full IP ownership to our clients.
               </p>
-            </motion.div>
+            </div>
 
             {/* CTA & Leave Review Button */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#B9F36B] text-[#0A0B0D] font-bold text-sm hover:bg-[#cbf988] transition-all shadow-[0_8px_20px_rgba(185,243,107,0.25)] group active:scale-95"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#B9F36B] text-[#0A0B0D] font-bold text-sm hover:bg-[#cbf988] transition-colors group active:scale-95 shadow-sm"
               >
                 <span>Get Started</span>
                 <ArrowUpRight className="w-4 h-4 text-[#0A0B0D] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -274,7 +271,7 @@ export default function Testimonials() {
                             key={i}
                             className={`w-4 h-4 ${
                               i < (activeItem.rating ?? 5)
-                                ? "fill-[#FFB800] text-[#FFB800] drop-shadow-[0_2px_8px_rgba(255,184,0,0.35)]"
+                                ? "fill-[#FFB800] text-[#FFB800]"
                                 : "fill-transparent text-white/20"
                             }`}
                           />
@@ -436,13 +433,13 @@ export default function Testimonials() {
                                 onClick={() => handleRatingSelect(starVal)}
                                 onMouseEnter={() => setHoverRating(starVal)}
                                 onMouseLeave={() => setHoverRating(null)}
-                                className="min-w-[44px] min-h-[44px] flex items-center justify-center hover:scale-110 transition-transform cursor-pointer"
+                                className="min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer"
                                 aria-label={`Rate ${starVal} stars`}
                               >
                                 <Star
                                   className={`w-6 h-6 transition-colors ${
                                     isFilled
-                                      ? "fill-[#FFB800] text-[#FFB800] drop-shadow-[0_2px_8px_rgba(255,184,0,0.4)]"
+                                      ? "fill-[#FFB800] text-[#FFB800]"
                                       : "fill-transparent text-white/20 hover:text-white/40"
                                   }`}
                                 />
@@ -545,7 +542,7 @@ export default function Testimonials() {
                       </button>
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#B9F36B] text-[#0A0B0D] font-bold text-xs font-mono hover:bg-[#cbf988] transition-all shadow-md shadow-[#B9F36B]/20 active:scale-95 cursor-pointer"
+                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#B9F36B] text-[#0A0B0D] font-bold text-xs font-mono hover:bg-[#cbf988] transition-colors shadow-sm active:scale-95 cursor-pointer"
                       >
                         <span>Publish Review</span>
                         <Send className="w-3.5 h-3.5" />

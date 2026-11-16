@@ -17,10 +17,10 @@ export default function Portfolio() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 sm:mb-16">
           <div>
-            <span className="text-[#B9F36B] text-xs font-mono uppercase tracking-[0.14em] font-semibold block mb-2">
+            <span className="text-[#B9F36B] text-xs font-mono font-semibold block mb-2">
               Featured Case Studies
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
               Built for impact, <span className="text-[#A6A8AC]">scaled for growth.</span>
             </h2>
           </div>

@@ -1,8 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Sparkles, MessageSquare } from 'lucide-react';
-
-/* ── Apple Spring Physics Constants ── */
-const springTactile = { type: 'spring', stiffness: 400, damping: 28 } as const;
+import { ArrowUpRight, MessageSquare } from 'lucide-react';
 
 export default function CTA() {
   return (
@@ -21,8 +18,8 @@ export default function CTA() {
           transition={{ duration: 0.45 }}
           className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/[0.1] bg-[#141619] mb-6 shadow-sm"
         >
-          <Sparkles className="h-3.5 w-3.5 text-[#B9F36B]" />
-          <span className="text-[11px] font-mono uppercase tracking-[0.14em] text-[#B9F36B] font-bold">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#B9F36B]" />
+          <span className="text-[11px] font-mono text-[#B9F36B] font-semibold">
             Next Project Sprint
           </span>
         </motion.div>
@@ -33,7 +30,7 @@ export default function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.55, delay: 0.08 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.04em] text-white leading-[1.05] mb-6"
+          className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] text-white leading-[1.05] mb-6"
         >
           Ready to build your brand with{' '}
           <em className="accent-serif text-[#B9F36B] font-normal not-italic block sm:inline">
@@ -59,29 +56,23 @@ export default function CTA() {
           transition={{ duration: 0.55, delay: 0.24 }}
           className="flex flex-wrap items-center justify-center gap-4"
         >
-          <motion.a
+          <a
             href="#contact"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
-            transition={springTactile}
-            className="group inline-flex items-center gap-3.5 px-8 py-4 rounded-2xl bg-[#B9F36B] text-[#0A0B0D] font-bold text-sm shadow-[0_13px_28px_rgba(185,243,107,0.35)] hover:bg-[#cbf988] transition-all min-h-[52px]"
+            className="group inline-flex items-center gap-3.5 px-8 py-4 rounded-2xl bg-[#B9F36B] text-[#0A0B0D] font-bold text-sm shadow-[0_4px_16px_rgba(185,243,107,0.18)] hover:bg-[#cbf988] active:scale-98 transition-colors min-h-[52px]"
           >
             <span>Start a project</span>
             <span className="w-6 h-6 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-black/15 transition-colors">
               <ArrowUpRight className="w-3.5 h-3.5 text-[#0A0B0D] stroke-[2.5]" />
             </span>
-          </motion.a>
+          </a>
 
-          <motion.a
+          <a
             href="#contact"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
-            transition={springTactile}
-            className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl border border-white/[0.14] bg-[#141619]/90 text-white font-medium text-sm backdrop-blur-xl hover:bg-white/[0.08] transition-all min-h-[52px]"
+            className="inline-flex items-center gap-2 px-7 py-4 rounded-2xl border border-white/[0.14] bg-[#141619]/90 text-white font-medium text-sm backdrop-blur-xl hover:bg-white/[0.08] active:scale-98 transition-colors min-h-[52px]"
           >
             <MessageSquare className="w-4 h-4 text-[#A6A8AC]" />
             <span>Talk to us →</span>
-          </motion.a>
+          </a>
         </motion.div>
       </div>
     </section>

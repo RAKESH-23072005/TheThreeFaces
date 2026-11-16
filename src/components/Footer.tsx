@@ -70,10 +70,10 @@ export default function Footer() {
                 className="h-10 sm:h-11 w-auto object-contain rounded-lg"
               />
               <div>
-                <span className="text-base sm:text-lg font-extrabold tracking-[0.16em] sm:tracking-[0.2em] text-white block">
-                  THE THREEFACES
+                <span className="text-base sm:text-lg font-bold tracking-tight text-white block">
+                  The ThreeFaces
                 </span>
-                <span className="text-[11px] font-mono text-[#B9F36B] tracking-wider block font-semibold">
+                <span className="text-[11px] font-mono text-[#B9F36B] block font-semibold">
                   Three Perspectives. One Digital Vision.
                 </span>
               </div>
@@ -93,7 +93,7 @@ export default function Footer() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h4 className="mb-4 text-xs font-mono font-bold uppercase tracking-[0.18em] text-[#B9F36B]">
+              <h4 className="mb-4 text-xs font-mono font-semibold text-[#B9F36B]">
                 Services
               </h4>
               <ul className="space-y-2.5">
@@ -114,7 +114,7 @@ export default function Footer() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h4 className="mb-4 text-xs font-mono font-bold uppercase tracking-[0.18em] text-[#B9F36B]">
+              <h4 className="mb-4 text-xs font-mono font-semibold text-[#B9F36B]">
                 Navigation
               </h4>
               <ul className="space-y-2.5">
@@ -141,7 +141,7 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-3 flex flex-col"
           >
-            <h4 className="mb-4 text-xs font-mono font-bold uppercase tracking-[0.18em] text-[#B9F36B]">
+            <h4 className="mb-4 text-xs font-mono font-semibold text-[#B9F36B]">
               Connect
             </h4>
 

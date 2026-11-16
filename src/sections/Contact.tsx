@@ -170,11 +170,11 @@ const Contact = () => {
           className="mb-14 flex flex-col items-center text-center md:items-start md:text-left"
         >
           <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
-            <span className="text-[#B9F36B] text-xs font-mono uppercase tracking-[0.08em]">
+            <span className="text-[#B9F36B] text-xs font-mono font-semibold">
               Get in Touch
             </span>
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-white md:text-5xl lg:text-6xl">
             Let&apos;s build something{' '}
             <span className="accent-serif text-[#B9F36B] font-normal not-italic">
               extraordinary.

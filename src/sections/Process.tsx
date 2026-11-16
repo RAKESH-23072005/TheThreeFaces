@@ -166,7 +166,7 @@ export default function Process() {
                   </span>
 
                   {/* Step Title with Playfair Accent */}
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 tracking-tight leading-tight">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-4 tracking-tight leading-tight">
                     {step.title}{' '}
                     <em
                       className="accent-serif font-normal not-italic"

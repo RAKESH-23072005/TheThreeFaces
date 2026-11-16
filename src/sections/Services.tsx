@@ -18,7 +18,7 @@ export default function Services() {
             transition={{ duration: 0.45 }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/[0.1] bg-[#141619] mb-5 shadow-sm"
           >
-            <span className="text-[#B9F36B] text-[11px] font-mono uppercase tracking-[0.14em] font-bold">
+            <span className="text-[#B9F36B] text-[11px] font-mono font-semibold">
               What We Do
             </span>
           </motion.div>
@@ -28,7 +28,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.5, delay: 0.08 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-[-0.04em] leading-[1.05] mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-[-0.04em] leading-[1.05] mb-6"
           >
             Three disciplines.{" "}
             <span className="text-[#A6A8AC] font-medium">No filler </span>
@@ -64,8 +64,7 @@ export default function Services() {
                   delay: index * 0.08,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                whileHover={{ y: -4 }}
-                className="group relative rounded-3xl border border-white/[0.08] border-t-white/[0.18] bg-[#141619] hover:bg-[#181B1F] hover:border-[#B9F36B]/40 p-7 sm:p-9 shadow-2xl transition-all duration-300 flex flex-col justify-between"
+                className="group relative rounded-3xl border border-white/[0.08] border-t-white/[0.18] bg-[#141619] hover:bg-[#181B1F] p-7 sm:p-9 shadow-2xl transition-colors duration-200 flex flex-col justify-between"
               >
                 <div>
                   {/* Top Bar: Icon + Arrow */}
@@ -73,13 +72,13 @@ export default function Services() {
                     <div className="w-12 h-12 rounded-2xl bg-white/[0.06] border border-white/10 flex items-center justify-center text-[#B9F36B] group-hover:bg-[#B9F36B] group-hover:text-[#0A0B0D] transition-colors shadow-sm">
                       <Icon className="w-6 h-6 stroke-[2.2]" />
                     </div>
-                    <span className="w-8 h-8 rounded-full border border-white/10 bg-white/[0.04] flex items-center justify-center text-[#A6A8AC] group-hover:text-white group-hover:border-[#B9F36B]/50 transition-colors shadow-sm">
+                    <span className="w-8 h-8 rounded-full border border-white/10 bg-white/[0.04] flex items-center justify-center text-[#A6A8AC] group-hover:text-white transition-colors shadow-sm">
                       <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </span>
                   </div>
 
                   {/* Title & Description */}
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-[#B9F36B] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">
                     {service.title}
                   </h3>
                   <p className="text-sm sm:text-base text-[#A6A8AC] leading-relaxed mb-6">

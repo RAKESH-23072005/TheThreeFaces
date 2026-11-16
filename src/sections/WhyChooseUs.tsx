@@ -7,9 +7,6 @@ import {
   Sparkles,
 } from "lucide-react";
 
-/* ── Apple Spring Physics Constants (Critically Damped) ── */
-const springCard = { type: "spring", stiffness: 350, damping: 26 } as const;
-
 /* ── Feature Data with Verified Stock Photography & Glass Metrics ── */
 interface FeatureItem {
   number: string;
@@ -94,7 +91,6 @@ export default function WhyChooseUs() {
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute top-1/3 left-1/4 w-[600px] h-[500px] rounded-full bg-[#B9F36B]/[0.025] blur-[150px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[400px] rounded-full bg-[#818CF8]/[0.02] blur-[140px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
@@ -107,7 +103,7 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.45 }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/[0.1] bg-[#141619] mb-4"
           >
-            <span className="text-[#B9F36B] text-[11px] font-mono uppercase tracking-[0.14em] font-bold">
+            <span className="text-[#B9F36B] text-[11px] font-mono font-semibold">
               About The ThreeFaces
             </span>
           </motion.div>
@@ -117,7 +113,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.08 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-[-0.04em] leading-[1.05] mb-6"
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-[-0.04em] leading-[1.05] mb-6"
           >
             We build <span className="text-white">brands</span>
             <br />
@@ -158,9 +154,7 @@ export default function WhyChooseUs() {
                   transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                   className="w-full md:w-1/2 group"
                 >
-                  <motion.div
-                    whileHover={{ y: -4 }}
-                    transition={springCard}
+                  <div
                     className="relative w-full rounded-3xl border border-white/[0.12] border-t-white/[0.25] bg-[#15171A]/90 backdrop-blur-2xl p-2.5 sm:p-3.5 shadow-2xl shadow-black/80 overflow-hidden"
                   >
                     {/* Image Container with Specular Framing */}
@@ -172,7 +166,7 @@ export default function WhyChooseUs() {
                         loading="lazy"
                       />
                       </div>
-                  </motion.div>
+                  </div>
                 </motion.div>
 
                 {/* Text Narrative Side */}
@@ -192,7 +186,7 @@ export default function WhyChooseUs() {
                   <div className="w-12 h-0.5 bg-[#B9F36B]/50 mb-5 rounded-full" />
 
                   {/* Title */}
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 tracking-[-0.02em] leading-tight">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-4 tracking-[-0.02em] leading-tight">
                     {feature.title}
                   </h3>
 

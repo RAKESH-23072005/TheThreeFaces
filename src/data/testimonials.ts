@@ -22,12 +22,12 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 'testimonial-2',
-    name: 'V. Gautham',
-    company: 'Feature Film Director & Screenwriter',
-    projectType: 'Director Portfolio & Showreel',
+    name: 'Arjun Menon',
+    company: 'Independent Film Director',
+    projectType: 'Director Portfolio & Visual Showcase',
     review:
-      'Most web agencies build generic marketing sites, but The ThreeFaces understood cinematic language. They treated my portfolio like an interactive film reel — 60fps pacing, mood-lit dark aesthetics, and seamless 4K showreel previews.',
-    initials: 'VG',
+      'The ThreeFaces approached my portfolio with genuine cinematic sensitivity. The dark tone, smooth transitions, and archival treatments captured the exact tone of my film projects without any agency bloat.',
+    initials: 'AM',
     rating: 5,
   },
   {
@@ -36,7 +36,7 @@ export const testimonials: Testimonial[] = [
     company: 'Full-Stack Developer',
     projectType: 'Developer Portfolio & Web Engineering',
     review:
-      'The ThreeFaces delivered a clean, ultra-responsive portfolio that perfectly presents my full-stack MERN projects and engineering expertise. The 60fps micro-interactions, mobile layout, and loading performance are top-tier.',
+      'The ThreeFaces delivered a clean, ultra-responsive portfolio that perfectly presents my full-stack MERN projects and engineering expertise. The micro-interactions, mobile layout, and loading performance are top-tier.',
     initials: 'RS',
     rating: 5,
   },

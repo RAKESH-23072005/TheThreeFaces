@@ -73,12 +73,12 @@ export default function FAQ() {
         {/* Section Header */}
         <div className="flex flex-col items-center justify-center text-center mx-auto mb-16 sm:mb-20 w-full">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/[0.1] bg-[#141619] mb-4 shadow-sm">
-            <span className="text-[#B9F36B] text-[11px] font-mono uppercase tracking-[0.14em] font-bold">
+            <span className="text-[#B9F36B] text-[11px] font-mono font-semibold">
               FAQ
             </span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.04em] text-white text-center w-full">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] text-white text-center w-full">
             Common{' '}
             <span className="accent-serif text-[#B9F36B] font-normal not-italic">
               questions
