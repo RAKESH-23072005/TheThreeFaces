@@ -101,7 +101,7 @@ export default function Navbar() {
           {/* Mobile Menu Hamburger Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="sm:hidden w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition-colors bg-white/[0.08] text-white hover:bg-white/[0.12]"
+            className="sm:hidden w-11 h-11 rounded-full flex items-center justify-center cursor-pointer transition-colors bg-white/[0.08] text-white hover:bg-white/[0.12] active:scale-95"
             aria-label="Toggle navigation menu"
           >
             {mobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}

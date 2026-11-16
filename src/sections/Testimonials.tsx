@@ -255,7 +255,7 @@ export default function Testimonials() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="relative min-h-[340px] sm:min-h-[300px]">
+            <div className="relative">
               <AnimatePresence mode="wait">
                 <motion.article
                   key={activeItem.id || current}
@@ -280,7 +280,7 @@ export default function Testimonials() {
                           />
                         ))}
                       </div>
-                      <span className="text-xs font-mono px-3 py-1 rounded-full bg-[#B9F36B]/15 text-[#B9F36B] font-semibold">
+                      <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-[#B9F36B]/15 text-[#B9F36B] font-semibold truncate max-w-[140px] sm:max-w-none">
                         {activeItem.projectType}
                       </span>
                     </div>
@@ -331,17 +331,23 @@ export default function Testimonials() {
               </AnimatePresence>
             </div>
 
-            {/* Pagination Dots */}
-            <div className="flex justify-center gap-2 mt-6">
+            {/* Pagination Dots — 44px touch target wrappers for Apple HIG compliance */}
+            <div className="flex justify-center gap-1 mt-4" role="tablist" aria-label="Review navigation">
               {items.map((_, idx) => (
                 <button
                   key={idx}
                   onClick={() => setCurrent(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                    idx === current ? "w-8 bg-[#B9F36B]" : "w-2 bg-white/20 hover:bg-white/40"
-                  }`}
+                  role="tab"
+                  aria-selected={idx === current}
+                  className="inline-flex items-center justify-center min-w-[44px] min-h-[44px] cursor-pointer"
                   aria-label={`Go to review ${idx + 1}`}
-                />
+                >
+                  <span
+                    className={`block h-2 rounded-full transition-all duration-300 ${
+                      idx === current ? "w-8 bg-[#B9F36B]" : "w-2 bg-white/20 hover:bg-white/40"
+                    }`}
+                  />
+                </button>
               ))}
             </div>
           </div>
@@ -355,22 +361,22 @@ export default function Testimonials() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto"
+            className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto overscroll-contain p-4"
             onClick={resetModal}
           >
             <motion.div
-              initial={{ scale: 0.94, opacity: 0, y: 16 }}
+              initial={{ scale: 0.96, opacity: 0, y: 24 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.94, opacity: 0, y: 16 }}
-              transition={{ type: "spring", stiffness: 350, damping: 28 }}
+              exit={{ scale: 0.96, opacity: 0, y: 24 }}
+              transition={{ type: "spring", stiffness: 350, damping: 30 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-lg rounded-3xl border border-white/[0.14] border-t-white/[0.25] bg-[#141619] p-6 sm:p-8 shadow-2xl shadow-black/90 my-auto text-left"
+              className="relative w-full max-w-lg rounded-t-3xl sm:rounded-3xl border border-white/[0.14] border-t-white/[0.25] bg-[#141619] p-5 sm:p-8 shadow-2xl shadow-black/90 mt-auto sm:my-auto text-left"
             >
               {/* Close Button */}
               <button
                 type="button"
                 onClick={resetModal}
-                className="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-[#A6A8AC] hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+                className="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/[0.06] hover:bg-white/[0.12] text-[#A6A8AC] hover:text-white flex items-center justify-center transition-colors cursor-pointer active:scale-95"
                 aria-label="Close modal"
               >
                 <X className="w-4 h-4" />
@@ -416,7 +422,7 @@ export default function Testimonials() {
                         Your Rating
                       </label>
                       <div className="flex items-center gap-2">
-                        <div className="flex items-center gap-1.5 p-2 rounded-xl bg-white/[0.03] border border-white/[0.08] w-fit">
+                        <div className="flex items-center gap-0 rounded-xl bg-white/[0.03] border border-white/[0.08] w-fit">
                           {[1, 2, 3, 4, 5].map((starVal) => {
                             const isFilled =
                               hoverRating !== null
@@ -430,7 +436,7 @@ export default function Testimonials() {
                                 onClick={() => handleRatingSelect(starVal)}
                                 onMouseEnter={() => setHoverRating(starVal)}
                                 onMouseLeave={() => setHoverRating(null)}
-                                className="p-1 hover:scale-110 transition-transform cursor-pointer"
+                                className="min-w-[44px] min-h-[44px] flex items-center justify-center hover:scale-110 transition-transform cursor-pointer"
                                 aria-label={`Rate ${starVal} stars`}
                               >
                                 <Star

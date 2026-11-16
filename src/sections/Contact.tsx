@@ -8,7 +8,6 @@ import {
   Info,
 } from 'lucide-react';
 import { contactConfig } from '../data/contact';
-import { InstagramIcon, LinkedinIcon, GithubIcon } from '../components/BrandIcons';
 
 interface FormData {
   fullName: string;
@@ -488,43 +487,6 @@ const Contact = () => {
                   </p>
                 </div>
               </a>
-            </div>
-
-            {/* Social links */}
-            <div>
-              <h3 className="mb-4 text-lg font-semibold text-white">
-                Follow Us
-              </h3>
-              <div className="flex items-center gap-3">
-                {[
-                  {
-                    icon: InstagramIcon,
-                    href: contactConfig.social.instagram,
-                    label: 'Instagram',
-                  },
-                  {
-                    icon: LinkedinIcon,
-                    href: contactConfig.social.linkedin,
-                    label: 'LinkedIn',
-                  },
-                  {
-                    icon: GithubIcon,
-                    href: contactConfig.social.github,
-                    label: 'GitHub',
-                  },
-                ].map(({ icon: Icon, href, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="flex h-11 w-11 items-center justify-center rounded-lg border border-[#2A2D32] bg-[#1E2024] text-[#A6A8AC] transition-all duration-300 hover:border-[#B9F36B]/40 hover:bg-[#B9F36B]/10 hover:text-[#B9F36B]"
-                  >
-                    <Icon className="h-5 w-5" />
-                  </a>
-                ))}
-              </div>
             </div>
 
             {/* CTA blurb */}
