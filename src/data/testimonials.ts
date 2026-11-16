@@ -21,16 +21,6 @@ export const testimonials: Testimonial[] = [
     rating: 5,
   },
   {
-    id: 'testimonial-2',
-    name: 'Arjun Menon',
-    company: 'Independent Film Director',
-    projectType: 'Director Portfolio & Visual Showcase',
-    review:
-      'The ThreeFaces approached my portfolio with genuine cinematic sensitivity. The dark tone, smooth transitions, and archival treatments captured the exact tone of my film projects without any agency bloat.',
-    initials: 'AM',
-    rating: 5,
-  },
-  {
     id: 'testimonial-3',
     name: 'Rakesh Sharma R',
     company: 'Full-Stack Developer',
